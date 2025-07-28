@@ -1,0 +1,62 @@
+cat. UNSAT
+dog. x=-3
+rabbit. x=-1
+elephant. x=2
+squirrel. UNSAT
+house. UNSAT
+theater. UNSAT
+home. x=1 OR x=-3
+heart. x=-2
+nostalgia. x=-1
+rose. UNSAT
+clown. UNSAT
+plate. UNSAT
+truck. x=3,y=-3 OR x=-2,y=-4
+small. x=1,y=-2
+unusual. UNSAT
+faint. UNSAT
+oblong. x=-3,y=-3 OR x=0,y=0
+email. x=1,y=-2 OR x=0,y=0
+touch. UNSAT
+inertia. UNSAT
+waste. UNSAT
+forget. UNSAT
+vampire. x=2,y=-4,z=2
+beast. x=6,y=-1,z=34 OR x=3,y=-6,z=0
+robot. x=3,y=-6,z=-2
+tank. x=0,y=2,z=0
+bar. UNKNOWN (TIMEOUT / ERROR)
+western. UNKNOWN (TIMEOUT / ERROR)
+titanium. UNKNOWN (TIMEOUT / ERROR)
+Total: 14 SAT, 10 UNSAT, 6 UNKNOWN
+
+ghost. 
+world. 
+horror. 
+terror. 
+designer. 
+twisted. 
+twilight. 
+sunset. 
+banana.
+orange.
+trivial. 
+forceful. 
+strawberry. 
+blueberry. 
+happy. 
+sad. 
+peace. 
+crazy. 
+hot. 
+cold. 
+Total: x SAT, x UNSAT, x UNKNOWN
+
+enigma. x=7
+terminate. UNSAT
+machine. x=13, y=7
+moon. UNSAT
+train. x=7, y=19, z=11
+doctor. UNSAT
+motor. UNSAT
+professor. x=4, y=6, z=7

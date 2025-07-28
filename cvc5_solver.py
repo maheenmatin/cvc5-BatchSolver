@@ -1,6 +1,5 @@
 from pathlib import Path
 import cvc5
-from cvc5 import Kind
 import time
 import input_output.reader as reader
 import input_output.writer as writer
@@ -12,12 +11,12 @@ class cvc5Solver:
     def __init__(self, time_limit, solver_name):
         # Set root directory for robust file paths
         # CRTSolver -> main -> cvc5_solver.py
-        # cvc5_solver.py = file, main = parents[0], CRTSolver = parents[1]
-        self.ROOT = Path(__file__).resolve().parents[1]
+        # cvc5_solver.py = file, cvc5-BatchSolver = parents[0]
+        self.ROOT = Path(__file__).resolve().parents[0]
 
         # Set absolute paths from root directory
-        self.TESTS = self.ROOT / "main" / "tests"
-        self.RESULTS = self.ROOT / "main" / "results"
+        self.TESTS = self.ROOT / "tests"
+        self.RESULTS = self.ROOT / "results"
 
         self.time_limit = time_limit
         self.solver_name = solver_name
@@ -85,5 +84,5 @@ class cvc5Solver:
         self.writer.write()
 
 if __name__ == "__main__":
-    base_cvc5 = cvc5Solver("30000", "cvc5")
+    base_cvc5 = cvc5Solver("1000", "cvc5")
     base_cvc5.execute()
