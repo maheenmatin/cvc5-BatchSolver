@@ -1,5 +1,3 @@
-import cvc5
-from cvc5 import Kind
 from pathlib import Path
 import re
 

@@ -30,7 +30,7 @@ class cvc5Solver:
         self.solver.setOption("produce-models", "true") # allows model retrieval
         self.solver.setOption("produce-unsat-cores", "true") # allows unsat core retrieval
         self.solver.setOption("tlimit-per", self.time_limit) # time limit for each check-sat
-        self.solver.setLogic("QF_NIA")
+        self.solver.setLogic("QF_ALL")
 
         self.start_time = time.time()
         self.sat_model = [] # if SAT, stores satisfying values
@@ -84,5 +84,5 @@ class cvc5Solver:
         self.writer.write()
 
 if __name__ == "__main__":
-    base_cvc5 = cvc5Solver("1000", "cvc5")
+    base_cvc5 = cvc5Solver("1", "cvc5")
     base_cvc5.execute()

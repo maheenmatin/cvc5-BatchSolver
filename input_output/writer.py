@@ -1,6 +1,5 @@
 import csv
 import time
-from pathlib import Path
 
 class Writer:
     def __init__(self, file_path, solver_name):
