@@ -52,7 +52,7 @@ Most SMT tools are solver-agnostic, and geared toward large-scale experiments wi
 
 | Project | Description | Focus | Input | Output |
 |---------|-------------|-------|--------|--------|
-| **[cvc5-BatchSolver](https://github.com/your-username/cvc5-BatchSolver)** | Lightweight batch processor with rich per-file analytics, using cvc5 | Single-solver `.smt2` evaluation and CSV reporting | `.smt2` files | CSV (incl. result, model, and metadata) |
+| **[cvc5-BatchSolver](https://github.com/maheenmatin/cvc5-BatchSolver)** | Lightweight batch processor with rich per-file analytics, using cvc5 | Single-solver `.smt2` evaluation and CSV reporting | `.smt2` files | CSV (incl. result, model, and metadata) |
 | **[solverpy](https://github.com/cbboyan/solverpy)** | Designed for multi-solver testing and parameter exploration | Multi-solver benchmarking and strategy experimentation | `.smt2` files | JSON (strategy comparison) |
 | **[jsi](https://github.com/a16z/jsi)** | Solver portfolio CLI - selects fastest result via parallel runs | Parallel execution and solver competition benchmarking | `.smt2` files | Terminal + optional CSV (basic logs) |
 | **[pySMT](https://github.com/pysmt/pysmt)** | Toolkit for building and reasoning about SMT formulas in code | SMT formula construction, manipulation, and solving | Python-defined formulas | No batch output / result aggregation |
