@@ -10,7 +10,7 @@ import input_output.writer as writer
 class cvc5Solver:
     def __init__(self, time_limit, solver_name):
         # Set root directory for robust file paths
-        # CRTSolver -> main -> cvc5_solver.py
+        # cvc5-BatchSolver -> cvc5_solver.py
         # cvc5_solver.py = file, cvc5-BatchSolver = parents[0]
         self.ROOT = Path(__file__).resolve().parents[0]
 

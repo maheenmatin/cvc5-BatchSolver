@@ -48,8 +48,6 @@ Most SMT tools are solver-agnostic, and geared toward large-scale experiments wi
 
 ### 🛠️ Feature Comparison
 
-### 🛠️ Alternative Solutions
-
 | Project | Description | Focus | Input | Output |
 |---------|-------------|-------|--------|--------|
 | **[cvc5-BatchSolver](https://github.com/maheenmatin/cvc5-BatchSolver)** | Lightweight batch processor with rich per-file analytics, using cvc5 | Single-solver `.smt2` evaluation and CSV reporting | `.smt2` files | CSV (incl. result, model, and metadata) |
