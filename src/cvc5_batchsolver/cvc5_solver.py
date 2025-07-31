@@ -1,8 +1,8 @@
 from pathlib import Path
 import cvc5
 import time
-import input_output.reader as reader
-import input_output.writer as writer
+import cvc5_batchsolver.input_output.reader as reader
+import cvc5_batchsolver.input_output.writer as writer
 
 # NOTE: Inspired by code and instructions from the following sources:
 # NOTE: https://cvc5.github.io/docs-ci/docs-main/api/python/base/quickstart.html
@@ -10,9 +10,10 @@ import input_output.writer as writer
 class cvc5Solver:
     def __init__(self, time_limit, solver_name):
         # Set root directory for robust file paths
-        # cvc5-BatchSolver -> cvc5_solver.py
-        # cvc5_solver.py = file, cvc5-BatchSolver = parents[0]
-        self.ROOT = Path(__file__).resolve().parents[0]
+        # cvc5-BatchSolver -> src -> cvc5_batchsolver -> cvc5_solver.py
+        # cvc5_solver.py = file, cvc5_batchsolver = parents[0], 
+        # src = parents[1], cvc5-BatchSolver = parents[2]
+        self.ROOT = Path(__file__).resolve().parents[2]
 
         # Set absolute paths from root directory
         self.TESTS = self.ROOT / "tests"
@@ -84,5 +85,5 @@ class cvc5Solver:
         self.writer.write()
 
 if __name__ == "__main__":
-    base_cvc5 = cvc5Solver("30000", "cvc5")
+    base_cvc5 = cvc5Solver("1", "cvc5")
     base_cvc5.execute()

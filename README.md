@@ -4,6 +4,38 @@
 
 ---
 
+**### Installation**
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/maheenmatin/cvc5-BatchSolver.git
+   cd cvc5-BatchSolver
+   ```
+
+2. **Optional: Install Poetry** (if not already installed):
+   ```bash
+   pipx install poetry
+   ```
+
+3. **Install dependencies:**
+   ```bash
+   poetry install
+   ```
+
+4. **Activate the environment:**
+   ```bash
+   poetry env activate
+   ```
+
+5. **Run the solver:**
+   ```bash
+   poetry run python -m cvc5_batchsolver.cvc5_solver
+   # or
+   poetry run python src/cvc5_batchsolver/cvc5_solver.py
+   ```
+
+---
+
 ### 🚀 Why This Project?
 
 While building [CRTSolver](https://github.com/maheenmatin/CRTSolver), a program that leverages the Chinese Remainder Theorem for increased performance in solving non-linear integer equations, I realized there was no easy way to batch-process a folder of SMT-LIB problems using cvc5 while retrieving:

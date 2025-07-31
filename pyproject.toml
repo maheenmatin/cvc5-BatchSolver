@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "cvc5_batchsolver"
+version = "1.0.0"
+description = ""
+authors = ["maheenmatin <maheenmatin@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "cvc5_batchsolver", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+cvc5 = "1.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
