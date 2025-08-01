@@ -30,8 +30,6 @@
 5. **Run the solver:**
    ```bash
    poetry run python -m cvc5_batchsolver.cvc5_solver
-   # or
-   poetry run python src/cvc5_batchsolver/cvc5_solver.py
    ```
 
 ---
