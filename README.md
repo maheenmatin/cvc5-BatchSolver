@@ -4,11 +4,11 @@
 
 ---
 
-**### Installation**
+**### 🧰 Installation**
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/maheenmatin/cvc5-BatchSolver.git
+   git clone https://github.com/maheenmatin/cvc5-BatchSolver
    cd cvc5-BatchSolver
    ```
 
