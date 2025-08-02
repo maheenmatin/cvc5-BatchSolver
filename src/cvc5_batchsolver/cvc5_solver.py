@@ -1,6 +1,7 @@
 from pathlib import Path
 import cvc5
 import time
+import argparse
 import cvc5_batchsolver.input_output.reader as reader
 import cvc5_batchsolver.input_output.writer as writer
 
@@ -8,15 +9,18 @@ import cvc5_batchsolver.input_output.writer as writer
 # NOTE: https://cvc5.github.io/docs-ci/docs-main/api/python/base/quickstart.html
 # NOTE: https://cvc5.github.io/docs-ci/docs-main/examples/parser.html
 class cvc5Solver:
-    def __init__(self, time_limit, solver_name):
-        # Set root directory for robust file paths
-        # cvc5-BatchSolver -> src -> cvc5_batchsolver -> cvc5_solver.py
-        # cvc5_solver.py = file, cvc5_batchsolver = parents[0], 
-        # src = parents[1], cvc5-BatchSolver = parents[2]
-        self.ROOT = Path(__file__).resolve().parents[2]
+    def __init__(self, time_limit, solver_name="cvc5", tests_dir=None):
+        if tests_dir is None:
+            # Set root directory using existing file structure
+            # cvc5-BatchSolver -> src -> cvc5_batchsolver -> cvc5_solver.py
+            self.ROOT = Path(__file__).resolve().parents[2]
+            self.TESTS = self.ROOT / "tests"
+        else:
+            # Use provided tests directory to set root directory
+            self.TESTS = Path(tests_dir)
+            self.ROOT = self.TESTS.parents[0]
 
-        # Set absolute paths from root directory
-        self.TESTS = self.ROOT / "tests"
+        # Results are in a sibling directory to the tests directory
         self.RESULTS = self.ROOT / "results"
 
         self.time_limit = time_limit
@@ -84,6 +88,23 @@ class cvc5Solver:
                 self.writer.store_result(file, self.start_time, self.sat_model)
         self.writer.write()
 
+# CLI entry point
+def main():
+    parser = argparse.ArgumentParser(description="Run the cvc5 solver on a directory of SMT2 files.")
+    parser.add_argument("--time_limit", required=True, type=int, 
+        help="Time limit for each check-sat (in ms).")
+    parser.add_argument("--solver_name", default="cvc5",
+        help="Name for the solver run (used in output results).")
+    parser.add_argument("--tests_dir", default=None, 
+        help="Path to directory containing test SMT2 files.")
+    args = parser.parse_args()
+
+    solver = cvc5Solver(
+        time_limit=str(args.time_limit),
+        solver_name=args.solver_name,
+        tests_dir=args.tests_dir
+    )
+    solver.execute()
+
 if __name__ == "__main__":
-    base_cvc5 = cvc5Solver("30000", "cvc5")
-    base_cvc5.execute()
+    main()

@@ -3,6 +3,7 @@ import time
 
 class Writer:
     def __init__(self, file_path, solver_name):
+        file_path.mkdir(parents=True, exist_ok=True) # create "results" if uncreated
         self.file_name = file_path / f"results_{solver_name}.csv"
         self.results = []
         self.file_count = 0

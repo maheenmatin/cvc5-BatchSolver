@@ -1,0 +1,1 @@
+Rewrite writer.py and test file structure to extract comment for no. of var and no. of deg

@@ -1,6 +1,6 @@
 # Welcome to cvc5-BatchSolver!
 
-**cvc5-BatchSolver** is a Python tool for batch-processing `.smt2` files using the cvc5 solver and exporting detailed results to a single `.csv` file.
+**cvc5-BatchSolver** is a Python CLI tool for batch-processing `.smt2` files using the cvc5 solver and exporting detailed results to a single `.csv` file.
 
 ---
 
@@ -22,16 +22,23 @@
    poetry install
    ```
 
-4. **Activate the environment:**
+4. **Activate virtual environment:**
    ```bash
    poetry env activate
    ```
 
-5. **Run the solver:**
+5. **Run solver:**
+   - Specify the time limit (in milliseconds) for each check-sat and the path to the directory containing the SMT2 files.
+   - Example values:
+      - Timeout: **30s**
+      - File structure: **root -> tests**
    ```bash
-   poetry run python -m cvc5_batchsolver.cvc5_solver
+   poetry run run-cvc5 --time_limit 30000 --tests_dir ./tests
    ```
 
+6. **See results:**
+   - A `results/` directory is created as a sibling to the directory containing SMT2 files
+   - The output CSV is saved to the `results/` directory
 ---
 
 ### 🚀 Why This Project?
@@ -71,8 +78,7 @@ Most SMT tools are solver-agnostic, and geared toward large-scale experiments wi
 ---
 
 ### 📦 Coming Soon
-- Support for Z3 via a similar program
-- CLI options for controlling timeout and file paths
+- Revised test setup - no need to organise by number of variables and maximum degree!
 
 ---
 
