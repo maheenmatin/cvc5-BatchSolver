@@ -4,7 +4,7 @@
 
 ---
 
-**### 🧰 Installation**
+### 🧰 Installation
 
 1. **Clone the repository:**
    ```bash
@@ -28,13 +28,20 @@
    ```
 
 5. **Run solver:**
-   - Specify the time limit (in milliseconds) for each check-sat and the path to the directory containing the SMT2 files.
-   - Example values:
-      - Timeout: **30s**
-      - File structure: **root -> tests**
    ```bash
    poetry run run-cvc5 --time_limit 30000 --tests_dir ./tests
    ```
+   - Example values:
+      - Timeout: **30s**
+      - File structure: **root -> tests**
+
+   - Required arguments:
+      - None
+
+   - Optional arguments:
+      - `--time_limit` sets the time limit (in milliseconds) for each check-sat. Default: **30000**
+      - `--solver_name` sets the name for the solver run (used in output results). Default: **cvc5**
+      - `--tests_dir` sets the path to a directory containing SMT2 files. Default: **cvc5-BatchSolver -> tests**
 
 6. **See results:**
    - A `results/` directory is created as a sibling to the directory containing SMT2 files

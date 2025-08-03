@@ -9,7 +9,7 @@ import cvc5_batchsolver.input_output.writer as writer
 # NOTE: https://cvc5.github.io/docs-ci/docs-main/api/python/base/quickstart.html
 # NOTE: https://cvc5.github.io/docs-ci/docs-main/examples/parser.html
 class cvc5Solver:
-    def __init__(self, time_limit, solver_name="cvc5", tests_dir=None):
+    def __init__(self, time_limit="30000", solver_name="cvc5", tests_dir=None):
         if tests_dir is None:
             # Set root directory using existing file structure
             # cvc5-BatchSolver -> src -> cvc5_batchsolver -> cvc5_solver.py
@@ -91,7 +91,7 @@ class cvc5Solver:
 # CLI entry point
 def main():
     parser = argparse.ArgumentParser(description="Run the cvc5 solver on a directory of SMT2 files.")
-    parser.add_argument("--time_limit", required=True, type=int, 
+    parser.add_argument("--time_limit", type=int, default=30000,
         help="Time limit for each check-sat (in ms).")
     parser.add_argument("--solver_name", default="cvc5",
         help="Name for the solver run (used in output results).")
